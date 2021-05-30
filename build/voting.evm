@@ -1,0 +1,336 @@
+    /* "vote.sol":33:236  contract voting {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "vote.sol":33:236  contract voting {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "vote.sol":33:236  contract voting {... */
+      mstore(0x40, 0x80)
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_1
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_1:
+        /* "vote.sol":33:236  contract voting {... */
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      shr(0xe0, calldataload(0x00))
+      dup1
+      0x3500f91e
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x632a9a52
+      eq
+      tag_4
+      jumpi
+      dup1
+      0xaf0dbe54
+      eq
+      tag_5
+      jumpi
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "vote.sol":53:70  bool public voted */
+    tag_3:
+      tag_6
+      tag_7
+      jump	// in
+    tag_6:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "vote.sol":116:234  function vote() public {... */
+    tag_4:
+      tag_8
+      tag_9
+      jump	// in
+    tag_8:
+      stop
+        /* "vote.sol":74:111  mapping(address => bool) public voter */
+    tag_5:
+      tag_10
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_11
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_11:
+        /* "vote.sol":74:111  mapping(address => bool) public voter */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_12
+      jump	// in
+    tag_10:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "vote.sol":53:70  bool public voted */
+    tag_7:
+      0x00
+      dup1
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xff
+      and
+      dup2
+      jump	// out
+        /* "vote.sol":116:234  function vote() public {... */
+    tag_9:
+        /* "vote.sol":174:179  false */
+      0x00
+        /* "vote.sol":153:179  voter[msg.sender] == false */
+      iszero
+      iszero
+        /* "vote.sol":153:158  voter */
+      0x01
+        /* "vote.sol":153:170  voter[msg.sender] */
+      0x00
+        /* "vote.sol":159:169  msg.sender */
+      caller
+        /* "vote.sol":153:170  voter[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xff
+      and
+        /* "vote.sol":153:179  voter[msg.sender] == false */
+      iszero
+      iszero
+      eq
+        /* "vote.sol":145:199  require(voter[msg.sender] == false, "Already voted!!") */
+      tag_14
+      jumpi
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x0f
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x416c726561647920766f74656421210000000000000000000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_14:
+        /* "vote.sol":225:229  true */
+      0x01
+        /* "vote.sol":205:210  voter */
+      dup1
+        /* "vote.sol":205:222  voter[msg.sender] */
+      0x00
+        /* "vote.sol":211:221  msg.sender */
+      caller
+        /* "vote.sol":205:222  voter[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "vote.sol":205:229  voter[msg.sender] = true */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xff
+      mul
+      not
+      and
+      swap1
+      dup4
+      iszero
+      iszero
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "vote.sol":116:234  function vote() public {... */
+      jump	// out
+        /* "vote.sol":74:111  mapping(address => bool) public voter */
+    tag_12:
+      mstore(0x20, 0x01)
+      dup1
+      0x00
+      mstore
+      keccak256(0x00, 0x40)
+      0x00
+      swap2
+      pop
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xff
+      and
+      dup2
+      jump	// out
+
+    auxdata: 0xa265627a7a72315820e48d712935af78d8eba65ab91047914767b8e947565488248baebf334c67c53364736f6c63430005110032
+}

@@ -1,0 +1,75 @@
+PragmaDirective
+   Source: "pragma solidity >=0.4.0 <0.6.0;"
+ContractDefinition "voting"
+   Source: "contract voting {\n  bool public voted;\n  mapping(address => bool) public voter;\n\n  function vote() public {\n    require(voter[msg.sender] == false, \"Already voted!!\");\n    voter[msg.sender] = true;\n  }\n}"
+  VariableDeclaration "voted"
+     Type: bool
+     Source: "bool public voted"
+    ElementaryTypeName bool
+       Source: "bool"
+  VariableDeclaration "voter"
+     Type: mapping(address => bool)
+     Source: "mapping(address => bool) public voter"
+    Mapping
+       Source: "mapping(address => bool)"
+      ElementaryTypeName address
+         Source: "address"
+      ElementaryTypeName bool
+         Source: "bool"
+  FunctionDefinition "vote" - public
+     Source: "function vote() public {\n    require(voter[msg.sender] == false, \"Already voted!!\");\n    voter[msg.sender] = true;\n  }"
+    ParameterList
+       Source: "()"
+    ParameterList
+       Source: ""
+    Block
+       Source: "{\n    require(voter[msg.sender] == false, \"Already voted!!\");\n    voter[msg.sender] = true;\n  }"
+      ExpressionStatement
+         Source: "require(voter[msg.sender] == false, \"Already voted!!\")"
+        FunctionCall
+           Type: tuple()
+           Source: "require(voter[msg.sender] == false, \"Already voted!!\")"
+          Identifier require
+             Type: function (bool,string memory) pure
+             Source: "require"
+          BinaryOperation using operator ==
+             Type: bool
+             Source: "voter[msg.sender] == false"
+            IndexAccess
+               Type: bool
+               Source: "voter[msg.sender]"
+              Identifier voter
+                 Type: mapping(address => bool)
+                 Source: "voter"
+              MemberAccess to member sender
+                 Type: address payable
+                 Source: "msg.sender"
+                Identifier msg
+                   Type: msg
+                   Source: "msg"
+            Literal, token: false value: false
+               Type: bool
+               Source: "false"
+          Literal, token: [no token] value: Already voted!!
+             Type: literal_string "Already voted!!"
+             Source: "\"Already voted!!\""
+      ExpressionStatement
+         Source: "voter[msg.sender] = true"
+        Assignment using operator =
+           Type: bool
+           Source: "voter[msg.sender] = true"
+          IndexAccess
+             Type: bool
+             Source: "voter[msg.sender]"
+            Identifier voter
+               Type: mapping(address => bool)
+               Source: "voter"
+            MemberAccess to member sender
+               Type: address payable
+               Source: "msg.sender"
+              Identifier msg
+                 Type: msg
+                 Source: "msg"
+          Literal, token: true value: true
+             Type: bool
+             Source: "true"
