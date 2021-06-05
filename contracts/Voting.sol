@@ -1,7 +1,8 @@
 pragma solidity >=0.4.0 <0.6.0;
 
-contract voting {
+contract Voting {
   bool public voted;
+  string public name;
   mapping(address => bool) public voter;
 
   function vote() public {

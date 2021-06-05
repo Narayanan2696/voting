@@ -1,0 +1,28 @@
+{
+  "name": "voting",
+  "version": "1.0.0",
+  "description": "Capture votes",
+  "main": "index.js",
+  "dependencies": {
+    "truffle": "^5.3.9",
+    "truffle-contract": "^4.0.31"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:Narayanan2696/voting.git"
+  },
+  "keywords": [
+    "solidity",
+    "voting",
+    "voter",
+    "election",
+    "ethereum",
+    "blockchain"
+  ],
+  "author": "Narayanan Venkataraman",
+  "license": "MIT"
+}
